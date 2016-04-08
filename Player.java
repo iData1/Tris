@@ -7,7 +7,12 @@ public class Player{
 	 * Valore booleano del turno del giocatore
 	 */
 	private boolean isMyTurn;
-	
+	/**
+	 * Costruttore personalizzato per la inizializzazione della tabella
+	 * @param i Quante righe per la tabella
+	 * @param j Quante colonne per la tabella
+	 */
+
 	public Player(int i, int j){
 		setMatrix(i,j);
 		isMyTurn = false;
@@ -45,9 +50,8 @@ public class Player{
 		return this.isMyTurn;
 	}
 	/**
-	 * Costruttore personalizzato per la inizializzazione della tabella
-	 * @param i Quante righe per la tabella
-	 * @param j Quante colonne per la tabella
+	 * Setter per la matrice
+	 * @param matrix da impostare
 	 */
 	public void setMatrix(int[][] matrix){
 		this.matrix = matrix;
@@ -58,10 +62,10 @@ public class Player{
 				}
 			}
 		}
-
 	}
 	/**
 	 * Getter per la matrice
+	 * @return matrice
 	 */
 	public int[][] getMatrix(){
 		return this.matrix;
@@ -70,6 +74,7 @@ public class Player{
 	 * Metodo per sapere il valore nella matrice in un determinato punto
 	 * @param i Numero della riga
 	 * @param j Numero della colonna
+	 * @return il valore della matrice in un determinato punto
 	 */
 	public int getMatrix(int i, int j){
 		return this.matrix[i][j];

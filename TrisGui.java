@@ -22,21 +22,20 @@ public class TrisGui extends JFrame implements MouseListener, MouseMotionListene
 		
 		tris.resizeRectangle(getWidth(),getHeight());
 		tris.resizeRectangles();
-		
 		Rectangle[][] r = tris.getRectangles();
+
 		for(int i = 0; i < tris.I; i++){
 			for(int j = 0; j < tris.J; j++){
-				if(tris.translateHover(mousePos) != null && ((int)tris.translateHover(mousePos).getX() == i && (int)tris.translateHover(mousePos).getY() == j)){
+				if(tris.translateHover(mousePos) != null && ((int)tris.translateHover(mousePos).getX() == i && (int)tris.translateHover(mousePos).getY() == j))
 					g.setColor(Color.RED);
-					g.fillRect((int)r[i][j].getX(),(int)r[i][j].getY(),(int)r[i][j].getWidth(),(int)r[i][j].getHeight());
-				}
-				else{
+				
+				else
 					g.setColor(Color.WHITE);
-					g.fillRect((int)r[i][j].getX(),(int)r[i][j].getY(),(int)r[i][j].getWidth(),(int)r[i][j].getHeight());
-				}
+				
+				g.fillRect((int)r[i][j].getX(),(int)r[i][j].getY(),(int)r[i][j].getWidth(),(int)r[i][j].getHeight());
+
 				g.setColor(Color.BLACK);
 				g.drawRect((int)r[i][j].getX(),(int)r[i][j].getY(),(int)r[i][j].getWidth(),(int)r[i][j].getHeight());
-
 			}
 		}
 		System.out.println("I: "+tris.translateHover(mousePos).getX()+" J: "+ tris.translateHover(mousePos).getY());
@@ -44,7 +43,7 @@ public class TrisGui extends JFrame implements MouseListener, MouseMotionListene
 	}
 	public static void main(String[] args) {
 		TrisGui disegno = new TrisGui("tris");
-		disegno.setSize(300, 300);
+		disegno.setSize(1000, 1000);
 		disegno.setVisible(true);
 	}
 	public void mouseClicked(MouseEvent e) {
